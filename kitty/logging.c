@@ -10,7 +10,7 @@
 #include <stdarg.h>
 #include <time.h>
 #include <sys/time.h>
-#ifdef __APPLE__
+#ifdef __MAC_10_12
 #include <os/log.h>
 #endif
 
@@ -21,7 +21,7 @@ void
 log_error(const char *fmt, ...) {
     va_list ar;
     struct timeval tv;
-#ifdef __APPLE__
+#ifdef __MAC_10_12
     // Apple does not provide a varargs style os_logv
     char logbuf[16 * 1024] = {0};
 #else
@@ -44,7 +44,7 @@ log_error(const char *fmt, ...) {
     if (use_os_log) { bufprint(vsnprintf, fmt, ar); }
     else vfprintf(stderr, fmt, ar);
     va_end(ar);
-#ifdef __APPLE__
+#ifdef __MAC_10_12
     if (use_os_log) os_log(OS_LOG_DEFAULT, "%{public}s", logbuf);
 #endif
     if (!use_os_log) fprintf(stderr, "\n");
@@ -66,7 +66,7 @@ static PyMethodDef module_methods[] = {
 bool
 init_logging(PyObject *module) {
     if (PyModule_AddFunctions(module, module_methods) != 0) return false;
-#ifdef __APPLE__
+#ifdef __MAC_10_12
     if (getenv("KITTY_LAUNCHED_BY_LAUNCH_SERVICES") != NULL) use_os_log = true;
 #endif
     return true;
