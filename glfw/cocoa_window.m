@@ -48,6 +48,8 @@
  #define NSEventModifierFlagNumericPad NSNumericPadKeyMask
  #define NSEventMaskAny NSAnyEventMask
  #define NSEventTypeApplicationDefined NSApplicationDefined
+ #define NSEventTypeKeyUp NSKeyUp
+ #define NSEventTypeKeyDown NSKeyDown
 #endif
 
 #if (MAC_OS_X_VERSION_MAX_ALLOWED < 101400)
