@@ -19,6 +19,11 @@
 #define NSEventModifierFlagOption NSAlternateKeyMask
 #define NSEventModifierFlagCommand NSCommandKeyMask
 #define NSEventModifierFlagControl NSControlKeyMask
+#define NSWindowStyleMaskFullScreen NSFullScreenWindowMask
+#define NSWindowStyleMaskBorderless NSBorderlessWindowMask
+#ifdef __OBJC__
+typedef NSUInteger NSWindowStyleMask;
+#endif
 #endif
 
 typedef int CGSConnectionID;
