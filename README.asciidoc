@@ -1,5 +1,9 @@
 = kitty - the fast, featureful, GPU based, terminal emulator
 
+This branch ( https://github.com/metayan/kitty/tree/osx11 ) is tweaked to work on El Capitan, and has been used very actively on El Capitan until 2018-11-16 17:38:06+01.
+As of that time I have no way of checking if it works any more.
+/Yan
+
 See https://sw.kovidgoyal.net/kitty
 
 image::https://travis-ci.org/kovidgoyal/kitty.svg?branch=master[Build status, link=https://travis-ci.org/kovidgoyal/kitty]
